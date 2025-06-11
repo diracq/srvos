@@ -8,7 +8,7 @@
 
   systemdDir ? "${svcName}/${cfg.name}",
   # %t: Runtime directory root (usually /run); see systemd.unit(5)
-  runtimeDir ? "%t/${systemdDir}",
+  runtimeDir ? "%S/${systemdDir}-work",
   # %S: State directory root (usually /var/lib); see systemd.unit(5)
   stateDir ? "%S/${systemdDir}",
   # %L: Log directory root (usually /var/log); see systemd.unit(5)
