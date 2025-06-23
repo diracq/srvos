@@ -228,10 +228,10 @@ in
           '';
           setupRuntimeDir = writeScript "setup-runtime-dirs" ''
             # Link _diag dir
-            ln -s "$LOGS_DIRECTORY" "$RUNTIME_DIRECTORY/_diag"
+            ln -sfn "$LOGS_DIRECTORY" "$RUNTIME_DIRECTORY/_diag"
 
             # Link the runner credentials to the runtime dir
-            ln -sf "$STATE_DIRECTORY"/{${lib.concatStringsSep "," runnerCredFiles}} "$RUNTIME_DIRECTORY/"
+            ln -sfn "$STATE_DIRECTORY"/{${lib.concatStringsSep "," runnerCredFiles}} "$RUNTIME_DIRECTORY/"
           '';
         in
         map
