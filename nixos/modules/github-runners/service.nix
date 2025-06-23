@@ -231,7 +231,7 @@ in
             ln -s "$LOGS_DIRECTORY" "$RUNTIME_DIRECTORY/_diag"
 
             # Link the runner credentials to the runtime dir
-            ln -s "$STATE_DIRECTORY"/{${lib.concatStringsSep "," runnerCredFiles}} "$RUNTIME_DIRECTORY/"
+            ln -sf "$STATE_DIRECTORY"/{${lib.concatStringsSep "," runnerCredFiles}} "$RUNTIME_DIRECTORY/"
           '';
         in
         map
